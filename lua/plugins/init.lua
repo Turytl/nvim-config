@@ -1,11 +1,25 @@
+require("configs.dap")
+
 return {
+  -- nvim-dap and nvim-dap-python setup
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    config = function()
+      require("dap-python").setup("/usr/bin/python")  -- Path to Python
+    end,
+  },
+
+  -- Conform plugin setup
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
+  -- LSP config
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -13,16 +27,14 @@ return {
     end,
   },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
+  -- Example: Uncomment if you want to see Treesitter working
   -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = {
+  --     ensure_installed = {
+  --       "vim", "lua", "vimdoc",
+  --       "html", "css"
+  --     },
+  --   },
   -- },
 }
