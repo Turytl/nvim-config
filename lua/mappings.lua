@@ -36,3 +36,7 @@ map("n", "<leader>do", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Step o
 
 -- NvimTree
 map("n", "<leader>nt", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+
+-- Splits
+map("n", "<leader>sv", ":vsplit<CR>", { desc = "Vertical split" })
+map("n", "<leader>sh", ":split<CR>", { desc = "Horizontal split" })

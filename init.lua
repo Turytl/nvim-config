@@ -42,6 +42,35 @@ require("lazy").setup({
     end
   },
   {
+    "nomnivore/ollama.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+    {
+      "<leader>oo",
+      ":<c-u>lua require('ollama').prompt()<cr>",
+      desc = "Ollama prompt",
+      mode = { "n", "v" },
+    },
+    {
+      "<leader>oG",
+      ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
+      desc = "Ollama Generate Code",
+      mode = { "n", "v" },
+    },
+    {
+      "<leader>os",
+      ":OllamaModel<cr>",
+      desc = "Select Ollama Model",
+      mode = { "n", "v" },
+    },
+  },
+  opts = {
+    model = "qwen2.5-coder:0.5b", -- sets your default model 
+     },
+  },	
+  {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("ibl").setup({
